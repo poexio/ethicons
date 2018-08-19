@@ -186,7 +186,7 @@ function drawSVG(shapesCoords, svgSize, colors) {
 
 // download as PNG
 function downloadPNG() {
-  const filename = const address = d3.select('.ethAddress').text()
+  const filename = d3.select('.ethAddress').text()
   const DOMURL = window.URL || window.webkitURL || window
 
   const drawing = d3.select('svg').node()
