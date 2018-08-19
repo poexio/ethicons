@@ -2,7 +2,7 @@
 const svgSize = 256
 const shapeCount = 3
 
-// show wallet box
+// if Web3 is detected, use wallet address
 const hasWeb3 = window && window.web3
 if (hasWeb3) {
   d3.select('.web3').style('display', 'block')
@@ -10,42 +10,24 @@ if (hasWeb3) {
   updateUI()
 }
 
-// random address
-d3.select('.randomAddress').on('click', () => {
-  updateUI()
-})
-
-d3.select(".useWeb3").on("click", () => {
-  updateUI()
-})
-
-d3.select(".download").on("click", () => {
-  const address = d3.select('.ethAddress').text()
-  downloadPNG(address)
-})
+// button actions
+d3.select('.randomAddress').on('click', () => updateUI())
+d3.select(".useWeb3").on("click", () => updateUI())
+d3.select(".download").on("click", () => downloadPNG(address))
 
 
 function updateUI() {
-
-  const useWeb3 = d3.selectAll('input.useWeb3').property('checked')
-
   // show/hide random button
+  const useWeb3 = d3.selectAll('input.useWeb3').property('checked')
   const showRandomButton = useWeb3 ? 'none' : 'block'
   d3.select('.randomAddress').style('display',showRandomButton)
 
-
+  // draw ethicon
   const address = getAddress()
-
   if (address) {
-    // show address
-    d3.select('.ethAddress').html(address)
-
-    // draw
-    main(address, svgSize, shapeCount)
+    d3.select('.ethAddress').html(address) // show address
+    main(address, svgSize, shapeCount) // draw
   }
-
-
-
 }
 
 // get ETH address
@@ -203,7 +185,8 @@ function drawSVG(shapesCoords, svgSize, colors) {
 }
 
 // download as PNG
-function downloadPNG(filename) {
+function downloadPNG() {
+  const filename = const address = d3.select('.ethAddress').text()
   const DOMURL = window.URL || window.webkitURL || window
 
   const drawing = d3.select('svg').node()
