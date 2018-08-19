@@ -20,7 +20,7 @@ d3.select(".useWeb3").on("click", () => {
 })
 
 d3.select(".download").on("click", () => {
-  const address = getAddress()
+  const address = d3.select('.ethAddress').text()
   downloadPNG(address)
 })
 
