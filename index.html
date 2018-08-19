@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Ethicons</title>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <style>
+      .credits {
+        font-size: .8em;
+        color: #5c5c5c;
+        margin-top: 6em;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ETHicon</h1>
+      <h5>Get your ETH wallet icon</h5>
+      <p class="ethAddress"></p>
+
+      <div class="row">
+        <div class="one-half column">
+          <svg></svg>
+        </div>
+
+        <div class="one-half column">
+          <!-- Show only if Web3 Detected</p> -->
+          <div class="web3" style="display:none">
+            <label>
+              <input type="checkbox" class="useWeb3"></input>
+              Use Browser Wallet
+            </label>
+            <p class="info"></p>
+          </div>
+          <button class="randomAddress">Random Address</button>
+          <br>
+          <button class="button-primary download">Download as PNG</button>
+        </div>
+      </div>
+
+
+
+      <div class="credits">
+        <p>
+          Powered by <a href="https://poex.io">POEX.IO</a>
+           |
+          More details about <a href="https://beta.observablehq.com/@clemsos/abstract-art-circa-1960-from-an-ethereum-wallet-address">how it works</a>
+        </p>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js" charset="utf-8"></script>
+  <script src="main.js" charset="utf-8"></script>
+</html>
